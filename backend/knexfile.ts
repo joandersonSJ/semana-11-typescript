@@ -1,10 +1,14 @@
 // Update with your config settings.
 
-module.exports = {
+import dotenv from 'dotenv'
+dotenv.config()
+
+export = {
 
   development: {
     client: 'pg',
     connection: {
+      host: 'localhost',
       database: 'week11_ts',
       user: 'postgres',
       password: 'root'

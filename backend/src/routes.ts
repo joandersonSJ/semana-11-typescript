@@ -3,6 +3,7 @@ const routes = Router()
 
 import OngController from './controllers/Ongs'
 
-routes.get('/',OngController.index);
+routes.get('/ongs',OngController.index);
+routes.post('/ongs',OngController.create);
 
 export default routes;
