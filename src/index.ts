@@ -1,10 +1,22 @@
 import express from 'express';
-const app = express()
+import routes from './routes'
 
-app.get('/',(req,res) => {
-  return res.json({ msg: 'Hello u.u'})
-})
+class App{
+    public express:express.Application
 
-app.listen(3333,() => {
-  console.log('Server is running')
-})
+    constructor(){
+      this.express = express()
+      this.middlewares()
+      this.routes()
+    }
+
+    private middlewares(): void{
+      this.express.use(express.json())
+    }
+
+    private routes(): void{
+      this.express.use(routes)
+    }
+}
+
+export default new App().express

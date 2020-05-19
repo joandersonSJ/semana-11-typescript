@@ -3,15 +3,19 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: './src/database/db.sqlite'
-    }, 
+      database: 'week11_ts',
+      user: 'postgres',
+      password: 'root'
+    },
     migrations: {
       directory: './src/database/migrations',
+      extension: 'ts'
     },
     seeds: {
       directory: './src/database/seeds',
+      extension: 'ts'
     },
     useNullAsDefault: true
   },
