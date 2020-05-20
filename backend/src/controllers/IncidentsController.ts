@@ -20,5 +20,14 @@ export default {
     })
 
     return res.json(incident)
+  },
+  async delete(req: Request, res: Response){
+    const id = req.params;
+
+    await knex('incidents')
+    .where(id)
+    .del()
+
+    return res.status(200).send()
   }
 }
