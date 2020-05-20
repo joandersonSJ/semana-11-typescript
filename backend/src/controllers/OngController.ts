@@ -4,7 +4,7 @@ import knex from '../database/connection';
 
 export default {
 
-  async index(req: Request, res: Response){
+  async index(req: Request, res: Response) {
     const ongs = await knex('ongs').select('*')
 
     return res.json(ongs)
@@ -22,6 +22,6 @@ export default {
       uf
     })
 
-    return res.json({ id })
+    return res.json(ong)
   }
 }
