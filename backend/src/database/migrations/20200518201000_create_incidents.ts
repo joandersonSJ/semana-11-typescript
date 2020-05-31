@@ -14,6 +14,9 @@ export async function up (knex: Knex): Promise<any> {
       .references('id')
       .inTable('ongs')
       .onDelete('cascade')
+
+    table.timestamp('created_at').defaultTo(knex.fn.now())
+    table.timestamp('updated_at').defaultTo(knex.fn.now())
   })
 }
 

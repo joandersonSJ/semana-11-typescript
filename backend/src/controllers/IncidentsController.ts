@@ -12,15 +12,14 @@ export default {
     const { title, description, value } = req.body
     const ong_id = req.headers.authorization
 
-    const [id] = await knex('incidents').insert({
+    const id = await knex('incidents').insert({
       title,
       description,
       value,
       ong_id
-    })
+    }).returning('id')
 
-    console.log(id)
-    return res.send()
+    return res.status(201).json({ id })
   },
   async delete (req: Request, res: Response) {
     const { id } = req.params
@@ -32,7 +31,7 @@ export default {
       .first()
 
     if (incident.ong_id !== ong_id) {
-      return res.status(401).json({ error: 'Operation not permitted' })
+      return res.status(403).json({ error: 'Operation not permitted' })
     }
 
     await knex('incidents')
