@@ -4,14 +4,13 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export = {
-
   development: {
-    client: 'pg',
+    client: process.env.CLIENT || '',
     connection: {
-      host: 'localhost',
-      database: 'week11_ts',
-      user: 'postgres',
-      password: 'root'
+      host: process.env.HOST || '',
+      database: process.env.DATABASE || '',
+      user: process.env.USER || '',
+      password: process.env.PASSWORD || ''
     },
     migrations: {
       directory: './src/database/migrations',

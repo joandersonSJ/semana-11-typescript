@@ -1,21 +1,21 @@
-import express from 'express';
-import routes from './routes';
-import dotenv from 'dotenv';
+import express from 'express'
+import routes from './routes'
+import dotenv from 'dotenv'
 
 class App {
   public express: express.Application
-  constructor() {
+  constructor () {
     this.express = express()
     this.middlewares()
     this.routes()
   }
 
-  private middlewares(): void {
+  private middlewares (): void {
     this.express.use(express.json())
-    dotenv.config();
+    dotenv.config()
   }
 
-  private routes(): void {
+  private routes (): void {
     this.express.use(routes)
   }
 }
