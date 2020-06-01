@@ -12,7 +12,7 @@ export const LogonContainer = styled.div`
 `;
 export const Form = styled.section`
   width: 100%;
-  max-width: 320px;
+  max-width: 360px;
   margin-right: 30px;
     
     form{
@@ -23,23 +23,4 @@ export const Form = styled.section`
       font-size: 32px;
       margin-bottom: 32px;
     }
-
-    a{
-      text-decoration: none;
-      color: #41414d;
-      margin-top: 40px;
-      font-size: 18px;
-      font-weight: 500; 
-      transition: filter 0.5s;
-      display: flex;
-      align-items: center;
-      transition: opacity 0.2s;
-    }
-
-    a svg{
-      margin-right: 8px;
-    }
-    a:hover{
-    opacity: 0.8;
-  }
 `;

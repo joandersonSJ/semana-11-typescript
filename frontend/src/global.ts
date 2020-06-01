@@ -53,4 +53,23 @@ export default createGlobalStyle`
   .button:hover{
     filter: brightness(90%);
   }
+
+  .back-link{
+      text-decoration: none;
+      color: #41414d;
+      margin-top: 40px;
+      font-size: 18px;
+      font-weight: 500; 
+      transition: filter 0.5s;
+      display: flex;
+      align-items: center;
+      transition: opacity 0.2s;
+    }
+
+    .back-link svg{
+      margin-right: 8px;
+    }
+    .back-link:hover{
+    opacity: 0.8;
+  }
 `;
